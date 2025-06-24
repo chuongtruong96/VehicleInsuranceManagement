@@ -1,0 +1,51 @@
+﻿@model Project3.ModelsView.InsuranceProductViewModel
+@{
+    ViewData["Title"] = "Insurance Product Details";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Policy Name:</label>
+                            <p>@Model.PolicyName</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Policy Details:</label>
+                            <p>@Model.PolicyDetails</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Vehicle Rate:</label>
+                            <p>@Model.VehicleRate</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Warranty Type:</label>
+                            <p>@Model.WarrantyType</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Warranty Duration:</label>
+                            <p>@Model.WarrantyDuration</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Warranty Details:</label>
+                            <p>@Model.WarrantyDetails</p>
+                        </div>
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

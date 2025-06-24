@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Project3.ModelsView.InsuranceProcessViewModel>
+@{
+    ViewData["Title"] = "Insurance Processes";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome !</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Create" class="btn btn-rounded btn-info">
+                        <span class="btn-icon-left text-info">
+                            <i class="fa fa-plus color-info"></i>
+                        </span>Create new
+                    </a>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Insurance Processes</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example" class="display" style="min-width: 845px; color:black;">
+                                <thead>
+                                    <tr>
+                                        <th>Policy Number</th>
+                                        <th>Customer Name</th>
+                                        <th>Vehicle Name</th>
+                                        <th>Policy Date</th>
+                                        <th>Policy Duration</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.PolicyNumber</td>
+                                            <td>@item.CustomerName</td>
+                                            <td>@item.VehicleName</td>
+                                            <td>@item.PolicyDate</td>
+                                            <td>@item.PolicyDuration</td>
+                                            <td>
+                                                <a href="@Url.Action("Details", new { policyNumber = item.PolicyNumber })" class="btn btn-info btn-sm">Details</a>
+                                                <a href="@Url.Action("Edit", new { policyNumber = item.PolicyNumber })" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="@Url.Action("Delete", new { policyNumber = item.PolicyNumber })" class="btn btn-danger btn-sm">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

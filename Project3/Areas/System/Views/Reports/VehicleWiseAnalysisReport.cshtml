@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Project3.ModelsView.VehicleWiseAnalysisReportViewModel>
+@{
+    ViewData["Title"] = "Vehicle-Wise Analysis Report";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Vehicle Model</th>
+                                <th>Total Policies</th>
+                                <th>Total Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.VehicleModel</td>
+                                    <td>@item.TotalPolicies</td>
+                                    <td>@item.TotalRevenue</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

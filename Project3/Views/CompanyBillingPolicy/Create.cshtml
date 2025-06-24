@@ -1,0 +1,77 @@
+﻿@using Project3.ModelsView
+@model CompanyBillingPolicyViewModel
+
+@{
+    ViewData["Title"] = "Create Billing Policy";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Create Billing Policy</h1>
+    <form asp-action="Create" method="post">
+        <input asp-for="CustomerId" type="hidden" />
+        <div class="row">
+            <!-- Left Column for Inputs -->
+            <div class="col-md-6">
+                
+                <div class="form-group mb-4">
+                    <label asp-for="CustomerName" class="form-label">Customer Name <i class="fa fa-user text-primary"></i></label>
+                    <input asp-for="CustomerName" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="CustomerPhoneNumber" class="form-label">Customer Phone <i class="fa fa-phone text-primary"></i></label>
+                    <input asp-for="CustomerPhoneNumber" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="CustomerAddProve" class="form-label">Address Proof <i class="fa fa-home text-primary"></i></label>
+                    <input asp-for="CustomerAddProve" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="PolicyNumber" class="form-label">Policy Number <i class="fa fa-file-alt text-primary"></i></label>
+                    <input asp-for="PolicyNumber" class="form-control" readonly />
+                </div>
+            </div>
+
+            <!-- Right Column for Text Inputs -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleName" class="form-label">Vehicle Name <i class="fa fa-car text-primary"></i></label>
+                    <input asp-for="VehicleName" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleModel" class="form-label">Vehicle Model <i class="fa fa-car text-primary"></i></label>
+                    <input asp-for="VehicleModel" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleRate" class="form-label">Vehicle Rate <i class="fa fa-dollar-sign text-primary"></i></label>
+                    <input asp-for="VehicleRate" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleBodyNumber" class="form-label">Body Number <i class="fa fa-hashtag text-primary"></i></label>
+                    <input asp-for="VehicleBodyNumber" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleEngineNumber" class="form-label">Engine Number <i class="fa fa-cogs text-primary"></i></label>
+                    <input asp-for="VehicleEngineNumber" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Date" class="form-label">Billing Date <i class="fa fa-calendar-alt text-primary"></i></label>
+                    <input asp-for="Date" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Amount" class="form-label">Amount <i class="fa fa-money-bill-wave text-primary"></i></label>
+                    <input asp-for="Amount" class="form-control" readonly />
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg w-50 mb-3">
+                        <i class="fa fa-credit-card me-2"></i>Proceed To Payment
+                    </button>
+                    <a asp-controller="InsuranceProcess" asp-action="Create" class="btn btn-secondary btn-lg w-50">
+                        <i class="fa fa-arrow-left me-2"></i> Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+﻿@model Project3.ModelsView.InsuranceProductViewModel
+
+@{
+    ViewData["Title"] = "Purchase Confirmation";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <!-- Display the same product image that was shown in the Index view -->
+                    <img src="@Url.Content(Model.ImageUrl)" class="card-img-top mb-4" alt="Product Image" />
+                    <h2 class="card-title text-primary mb-4">@ViewData["Title"]</h2>
+                    <p class="card-text">Thank you for your purchase!</p>
+
+                    <h3 class="mb-3">Confirmation</h3>
+                    <h5 class="card-title">@Model.PolicyName</h5>
+                    <p class="card-text">@Model.PolicyDetails</p>
+                    <p class="card-text"><strong>Warranty:</strong> @Model.WarrantyType (@Model.WarrantyDuration months)</p>
+                    <p class="card-text"><strong>Warranty Details:</strong> @Model.WarrantyDetails</p>
+                    <p class="card-text"><strong>Rate:</strong> $@Model.VehicleRate</p>
+
+                    <p class="mt-4">You can now proceed to fill in your vehicle information.</p>
+                    <a asp-action="CarSelection" asp-controller="VehicleInformations" class="btn btn-primary">Continue to Vehicle Information</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

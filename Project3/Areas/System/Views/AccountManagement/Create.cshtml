@@ -1,0 +1,126 @@
+﻿@model Project3.ModelsView.Admin.CreateAccountAdminViewModel;
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Create new</h4>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-12 col-xxl-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <form class="" asp-action="Create" method="post">
+                            @Html.AntiForgeryToken()
+                            <div>
+
+                                <section>
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <h5><label class="text-label">Fullname</label><span class="text-danger pl-2">&#8727;</span></h5>
+                                                <input type="text" asp-for="Fullname" class="form-control" />
+                                                <span class="text-danger" asp-validation-for="Fullname"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <h5><label class="text-label">Phone</label></h5>
+                                                <input id="single-file-input" type="number" class="form-control" asp-for="Phone" />
+                                                <span class="text-danger" asp-validation-for="Phone"></span>
+                                            </div>
+                                            <div id="single-preview" class="mt-4"></div>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <h5><label class="text-label">Email</label><span class="text-danger pl-2">&#8727;</span></h5>
+                                                <input type="text" asp-for="Email" class="form-control" />
+                                                <span class="text-danger" asp-validation-for="Email"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <h5><label class="text-label">Role</label><span class="text-danger pl-2">&#8727;</span></h5>
+                                                <select asp-for="RoleId" class="form-control">
+                                                    <option>Chọn vai trò</option>
+                                                    @foreach (var role in ViewBag.Role)
+                                                    {
+                                                        <option value="@role.Id">@role.NameRole1</option>
+                                                    }
+                                                </select>
+                                                <span class="text-danger" asp-validation-for="RoleId"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <h5><label class="text-label">Password</label><span class="text-danger pl-2">&#8727;</span></h5>
+                                                <input type="text" asp-for="Password" class="form-control" />
+                                                <span class="text-danger" asp-validation-for="Password"></span>
+                                                <div class="text-danger">
+                                                    @if (ViewData.ModelState.ContainsKey("PasswordTooShort"))
+                                                    {
+                                                        <span>@ViewData.ModelState["PasswordTooShort"].Errors.First().ErrorMessage</span>
+                                                    }
+
+                                                    @if (ViewData.ModelState.ContainsKey("PasswordRequiresLower"))
+                                                    {
+                                                        <span>@ViewData.ModelState["PasswordRequiresLower"].Errors.First().ErrorMessage</span>
+                                                    }
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <h5><label class="text-label">ConfirmPassword</label><span class="text-danger pl-2">&#8727;</span></h5>
+                                                <input type="text" asp-for="ConfirmPassword" class="form-control" />
+                                                <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+                                <div class="text-left mt-4 mb-5">
+                                    <button class="btn btn-primary btn-sl-sm mr-3" type="submit">
+                                        <span class="mr-2"><i class="fa fa-paper-plane"></i></span> Save
+                                    </button>
+                                    <a class="btn btn-dark btn-sl-sm" asp-action="index">
+                                        <span class="mr-2">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </span> Back
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

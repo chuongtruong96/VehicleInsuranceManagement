@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Project3.ModelsView.InsuranceProductViewModel>
+@{
+    ViewData["Title"] = "Insurance Products";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Create" class="btn btn-rounded btn-info">
+                        <span class="btn-icon-left text-info">
+                            <i class="fa fa-plus color-info"></i>
+                        </span>Create new
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Insurance Products</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example" class="display" style="min-width: 845px; color:black;">
+                                <thead>
+                                    <tr>
+                                        <th>Policy Name</th>
+                                        <th>Policy Details</th>
+                                        <th>Vehicle Rate</th>
+                                        <th>Warranty Type</th>
+                                        <th>Warranty Duration</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.PolicyName</td>
+                                            <td>@item.PolicyDetails</td>
+                                            <td>@item.VehicleRate</td>
+                                            <td>@item.WarrantyType</td>
+                                            <td>@item.WarrantyDuration</td>
+                                            <td>
+                                                <a asp-controller="AdminInsuranceProducts" asp-action="Details" , new { id=item.PolicyTypeId })" class="btn btn-info btn-sm">Details</a>
+                                                <a asp-controller="AdminInsuranceProducts" asp-action="Edit" , new { id=item.PolicyTypeId })" class="btn btn-warning btn-sm">Edit</a>
+                                                <a asp-controller="AdminInsuranceProducts" asp-action="Delete" , new { id=item.PolicyTypeId })" class="btn btn-danger btn-sm">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

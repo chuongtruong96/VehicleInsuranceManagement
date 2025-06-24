@@ -1,0 +1,122 @@
+﻿@model Project3.ModelsView.EstimateModelView
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Estimation";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded">
+        <div class="card-header bg-primary text-white text-center">
+            <h2 class="mb-0">@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body p-5">
+            <form asp-action="Create" method="post">
+                <!-- Hidden Fields -->
+                <input asp-for="CustomerId" type="hidden" />
+                <input asp-for="VehicleId" type="hidden" />
+
+                <!-- Estimation Details Card -->
+                <div class="card mb-4 border-0">
+                    <div class="card-header bg-light text-dark">
+                        <h4 class="mb-0">Estimation Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <!-- Left Column -->
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="CustomerName" class="form-label">Customer Name</label>
+                                    <input asp-for="CustomerName" class="form-control bg-light" readonly />
+                                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label asp-for="CustomerPhoneNumber" class="form-label">Phone Number</label>
+                                    <input asp-for="CustomerPhoneNumber" class="form-control bg-light" readonly />
+                                    <span asp-validation-for="CustomerPhoneNumber" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label asp-for="VehicleName" class="form-label">Vehicle Name</label>
+                                    <input asp-for="VehicleName" class="form-control bg-light" readonly />
+                                    <span asp-validation-for="VehicleName" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label asp-for="VehicleModel" class="form-label">Vehicle Model</label>
+                                    <input asp-for="VehicleModel" class="form-control bg-light" readonly />
+                                    <span asp-validation-for="VehicleModel" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="VehicleVersion" class="form-label">Vehicle Version</label>
+                                    <input asp-for="VehicleVersion" class="form-control bg-light" readonly />
+                                    <span asp-validation-for="VehicleVersion" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label asp-for="VehicleRate" class="form-label">Vehicle Rate</label>
+                                    <input asp-for="VehicleRate" class="form-control bg-light" readonly />
+                                    <span asp-validation-for="VehicleRate" class="text-danger"></span>
+                                </div>
+
+                                <!-- Warranty Details Button -->
+                                <div class="form-group mb-3">
+                                    <label asp-for="WarrantyId" class="form-label">Warranty</label>
+                                    <button type="button" class="btn btn-info w-100" onclick="toggleDetails('warrantyDetails')">
+                                        View Warranty Details
+                                    </button>
+                                    <span asp-validation-for="WarrantyId" class="text-danger"></span>
+                                    <div id="warrantyDetails" class="details-content" style="display: none;">
+                                        <p>@Model.WarrantyDetails</p>
+                                    </div>
+                                </div>
+
+                                <!-- Policy Type Details Button -->
+                                <div class="form-group mb-3">
+                                    <label asp-for="PolicyTypeId" class="form-label">Policy Type</label>
+                                    <button type="button" class="btn btn-info w-100" onclick="toggleDetails('policyDetails')">
+                                        View Policy Details
+                                    </button>
+                                    <span asp-validation-for="PolicyTypeId" class="text-danger"></span>
+                                    <div id="policyDetails" class="details-content" style="display: none;">
+                                        <p>@Model.PolicyTypeDetails</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fa fa-check-circle me-2"></i> Create Estimation
+                    </button>
+                    <a asp-controller="VehicleInformations" asp-action="CarSelection" class="btn btn-secondary btn-lg mt-3">
+                        <i class="fa fa-arrow-left me-2"></i> Back to Car Selection
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        function toggleDetails(detailsId) {
+            const detailsElement = document.getElementById(detailsId);
+            if (detailsElement.style.display === "none" || detailsElement.style.display === "") {
+                detailsElement.style.display = "block";
+            } else {
+                detailsElement.style.display = "none";
+            }
+        }
+    </script>
+}

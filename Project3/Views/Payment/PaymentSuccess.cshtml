@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Payment Success";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-success text-white text-center">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+                <div class="card-body text-center">
+                    <i class="fas fa-check-circle text-success" style="font-size: 3rem;"></i>
+                    <h3 class="mt-4">Thank You for Your Purchase!</h3>
+                    <p class="lead mt-3">
+                        Your payment was processed successfully. We appreciate your business and hope you enjoy your new purchase.
+                    </p>
+                    <p class="mt-4">
+                        If you have any questions or need further assistance, please don't hesitate to <a href="@Url.Action("Contact", "Home")" class="text-primary">contact us</a>.
+                    </p>
+                    <a href="~/Home/Index" class="btn btn-primary mt-4">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

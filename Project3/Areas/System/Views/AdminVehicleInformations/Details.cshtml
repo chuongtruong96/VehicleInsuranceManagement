@@ -1,0 +1,48 @@
+﻿@model Project3.Models.VehicleInformation
+
+@{
+    ViewData["Title"] = "Vehicle Details";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white text-center">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Vehicle Name</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleName)</dd>
+
+                        <dt class="col-sm-4">Owner Name</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleOwnerName)</dd>
+
+                        <dt class="col-sm-4">Model</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleModel)</dd>
+
+                        <dt class="col-sm-4">Version</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleVersion)</dd>
+
+                        <dt class="col-sm-4">Rate</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleRate)</dd>
+
+                        <dt class="col-sm-4">Body Number</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleBodyNumber)</dd>
+
+                        <dt class="col-sm-4">Engine Number</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleEngineNumber)</dd>
+
+                        <dt class="col-sm-4">Vehicle Number</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleNumber)</dd>
+                    </dl>
+
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

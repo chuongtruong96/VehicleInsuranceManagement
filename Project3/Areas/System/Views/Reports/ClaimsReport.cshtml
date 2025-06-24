@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Project3.ModelsView.ClaimsReportViewModel>
+@{
+    ViewData["Title"] = "Claims Report";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Claim Number</th>
+                                <th>Policy Number</th>
+                                <th>Policy Start Date</th>
+                                <th>Policy End Date</th>
+                                <th>Customer Name</th>
+                                <th>Place Of Accident</th>
+                                <th>Date Of Accident</th>
+                                <th>Insured Amount</th>
+                                <th>Claimable Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ClaimNumber</td>
+                                    <td>@item.PolicyNumber</td>
+                                    <td>@item.PolicyStartDate</td>
+                                    <td>@item.PolicyEndDate</td>
+                                    <td>@item.CustomerName</td>
+                                    <td>@item.PlaceOfAccident</td>
+                                    <td>@item.DateOfAccident</td>
+                                    <td>@item.InsuredAmount</td>
+                                    <td>@item.ClaimableAmount</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

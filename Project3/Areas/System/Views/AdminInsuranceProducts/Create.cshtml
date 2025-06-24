@@ -1,0 +1,57 @@
+﻿@model Project3.ModelsView.InsuranceProductViewModel
+@{
+    ViewData["Title"] = "Create Insurance Product";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-action="Create" method="post">
+                            <div class="form-group">
+                                <label for="PolicyName">Policy Name</label>
+                                <input type="text" class="form-control" asp-for="PolicyName" />
+                                <span asp-validation-for="PolicyName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyDetails">Policy Details</label>
+                                <textarea class="form-control" asp-for="PolicyDetails"></textarea>
+                                <span asp-validation-for="PolicyDetails" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleRate">Vehicle Rate</label>
+                                <input type="text" class="form-control" asp-for="VehicleRate" />
+                                <span asp-validation-for="VehicleRate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="WarrantyType">Warranty Type</label>
+                                <input type="text" class="form-control" asp-for="WarrantyType" />
+                            </div>
+                            <div class="form-group">
+                                <label for="WarrantyDuration">Warranty Duration</label>
+                                <input type="text" class="form-control" asp-for="WarrantyDuration" />
+                            </div>
+                            <div class="form-group">
+                                <label for="WarrantyDetails">Warranty Details</label>
+                                <textarea class="form-control" asp-for="WarrantyDetails"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Create</button>
+                            <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

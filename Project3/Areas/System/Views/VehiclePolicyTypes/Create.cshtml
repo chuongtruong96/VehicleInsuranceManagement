@@ -1,0 +1,62 @@
+﻿@model Project3.Models.VehiclePolicyType
+
+@{
+    ViewData["Title"] = "Create Vehicle Policy Type";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Index" class="btn btn-rounded btn-secondary">
+                        Back to List
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="PolicyName" class="control-label"></label>
+                                <input asp-for="PolicyName" class="form-control" />
+                                <span asp-validation-for="PolicyName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PolicyDetails" class="control-label"></label>
+                                <input asp-for="PolicyDetails" class="form-control" />
+                                <span asp-validation-for="PolicyDetails" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="VehicleRate" class="control-label"></label>
+                                <input asp-for="VehicleRate" class="form-control" readonly />
+                                <span asp-validation-for="VehicleRate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group text-right">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

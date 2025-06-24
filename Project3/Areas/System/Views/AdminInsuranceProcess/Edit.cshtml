@@ -1,0 +1,77 @@
+﻿@model Project3.ModelsView.InsuranceProcessViewModel
+@{
+    ViewData["Title"] = "Edit Insurance Process";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-action="Edit" method="post">
+                            <div class="form-group">
+                                <label for="CustomerName">Customer Name</label>
+                                <input type="text" class="form-control" asp-for="CustomerName" />
+                                <span asp-validation-for="CustomerName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="CustomerPhoneNumber">Customer Phone Number</label>
+                                <input type="text" class="form-control" asp-for="CustomerPhoneNumber" />
+                                <span asp-validation-for="CustomerPhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleName">Vehicle Name</label>
+                                <input type="text" class="form-control" asp-for="VehicleName" />
+                                <span asp-validation-for="VehicleName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleModel">Vehicle Model</label>
+                                <input type="text" class="form-control" asp-for="VehicleModel" />
+                                <span asp-validation-for="VehicleModel" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleRate">Vehicle Rate</label>
+                                <input type="text" class="form-control" asp-for="VehicleRate" />
+                                <span asp-validation-for="VehicleRate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyNumber">Policy Number</label>
+                                <input type="text" class="form-control" asp-for="PolicyNumber" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyDate">Policy Date</label>
+                                <input type="text" class="form-control" asp-for="PolicyDate" />
+                                <span asp-validation-for="PolicyDate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyDuration">Policy Duration (Months)</label>
+                                <input type="number" class="form-control" asp-for="PolicyDuration" />
+                                <span asp-validation-for="PolicyDuration" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleBodyNumber">Vehicle Body Number</label>
+                                <input type="text" class="form-control" asp-for="VehicleBodyNumber" />
+                                <span asp-validation-for="VehicleBodyNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleEngineNumber">Vehicle Engine Number</label>
+                                <input type="text" class="form-control" asp-for="VehicleEngineNumber" />
+                                <span asp-validation-for="VehicleEngineNumber" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

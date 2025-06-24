@@ -1,0 +1,313 @@
+﻿@model Project3.ModelsView.VehicleInformationViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Your Vehicle";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+   
+    ViewData["UnobtrusiveJavaScriptEnabled"] = "false";
+}
+
+
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">@ViewData["Title"]</h1>
+    <div class="border p-4 rounded" style="border-color: #007bff;">
+        <form asp-action="SaveVehicleInformation" asp-controller="VehicleInformations" method="post">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-4">
+                    <div class="form-group position-relative">
+                        <label for="manufacturerSelect">Manufacturer <i class="fa fa-car text-primary"></i></label>
+                        <select id="manufacturerSelect" name="VehicleName" class="form-control" data-bs-toggle="tooltip" data-bs-placement="top" title="Select the car manufacturer">
+                            <option value="">Choose Manufacturer</option>
+                            <span asp-validation-for="VehicleName" class="text-danger"></span>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-3 position-relative">
+                        <label for="modelSelect">Vehicle Model <i class="fa fa-cogs text-primary"></i></label>
+                        <select id="modelSelect" name="VehicleModel" class="form-control" disabled data-bs-toggle="tooltip" data-bs-placement="top" title="Select the vehicle model" >
+                            <option value="">Choose Model</option>
+                            <span asp-validation-for="VehicleModel" class="text-danger"></span>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-3 position-relative">
+                        <label for="trimSelect">Vehicle Version <i class="fa fa-info-circle text-primary"></i></label>
+                        <select id="trimSelect" name="VehicleVersion" class="form-control" disabled data-bs-toggle="tooltip" data-bs-placement="top" title="Select the vehicle version">
+                            <option value="">Choose Version</option>
+                            <span asp-validation-for="VehicleVersion" class="text-danger"></span>
+
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Middle Column -->
+                <div class="col-md-4">
+                    <div class="form-group mt-3 mt-md-0 position-relative">
+                        <label for="vehicleRate">Vehicle Rate <i class="fa fa-dollar-sign text-primary"></i></label>
+                        <input name="VehicleRate" asp-for="VehicleRate" class="form-control" value="@ViewBag.VehicleRate" readonly data-bs-toggle="tooltip" data-bs-placement="top" title="This is the estimated rate of the vehicle" />
+                        
+                    </div>
+
+                    <div class="form-group mt-3 position-relative">
+                        <label asp-for="VehicleBodyNumber" class="control-label">Body Number <i class="fa fa-hashtag text-primary"></i></label>
+                        <input asp-for="VehicleBodyNumber" class="form-control" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter the body number of your vehicle" placeholder="e.g:11223344556677889 (exactly 17 digits)" />
+                        <span asp-validation-for="VehicleBodyNumber" class="text-danger"></span>
+                        <div class="help-tooltip">
+                            <i class="fa fa-question-circle ms-2 text-info" data-toggle="tooltip" title="The body number (VIN) is a unique code used to identify individual motor vehicles."></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3 position-relative">
+                        <label asp-for="VehicleEngineNumber" class="control-label">Engine Number <i class="fa fa-cogs text-primary"></i></label>
+                        <input asp-for="VehicleEngineNumber" class="form-control" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter the engine number of your vehicle" placeholder="e.g:11223344556677889900 (20 digits)"/>
+                        <span asp-validation-for="VehicleEngineNumber" class="text-danger" ></span>
+                        <div class="help-tooltip">
+                            <i class="fa fa-question-circle ms-2 text-info" data-toggle="tooltip" title="The engine number is a unique identifier for the engine of your vehicle. It is usually engraved on the engine block and can also be found on the vehicle's registration documents. Ensure you enter this number exactly as it appears on the documents."></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-md-4">
+                    <div class="form-group mt-3 mt-md-0 position-relative">
+                        <label asp-for="VehicleNumber" class="control-label">Vehicle Number <i class="fa fa-id-badge text-primary"></i></label>
+                        <input asp-for="VehicleNumber" class="form-control" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter the registration number of your vehicle" placeholder="e.g: AB1234" />
+                        <span asp-validation-for="VehicleNumber" class="text-danger" ></span>
+                        <div class="help-tooltip">
+                            <i class="fa fa-question-circle ms-2 text-info" data-toggle="tooltip" title="The vehicle number is the registration number assigned by the government. This is typically found on your vehicle's registration certificate and is also displayed on the vehicle's number plate. Ensure you enter the number correctly, including any letters and numbers."></i>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group mt-4 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            <i class="fa fa-save me-2"></i> Save Vehicle Information
+                        </button>
+                    </div>
+
+                    <!-- Placeholder for additional functions or buttons -->
+                    <div class="form-group mt-3 text-center">
+                        <a href="#" class="btn btn-secondary w-100 mt-2" onclick="resetForm();"><i class="fa fa-undo me-2"></i> Reset Form</a>
+                        
+                    </div>
+                    <!-- Help Button -->
+                    <div class="form-group mt-3 text-center">
+                        <a href="#" class="btn btn-info w-100 mt-2" onclick="toggleHelpSection(); return false;">
+                            <i class="fa fa-question-circle me-2"></i> Help
+                        </a>
+                    </div>
+
+                    <!-- Collapsible Help Section -->
+                    <div id="helpSection" class="collapse mt-3">
+                        <div class="card card-body">
+                            <h5>General Help</h5>
+                            <p>This section provides detailed help about the vehicle information fields.</p>
+                            <p><strong>Vehicle Number:</strong> The vehicle number is the registration number assigned by the government. Ensure you enter the number correctly, including any letters and numbers.</p>
+                            <p><strong>Engine Number:</strong> The engine number is a unique identifier for the engine of your vehicle. Ensure you enter this number exactly as it appears on the documents.</p>
+                            <p><strong>Body Number:</strong> The body number (VIN) is a unique code used to identify individual motor vehicles. Ensure this number is entered accurately as it is crucial for vehicle identification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    <script>
+    let carData = [];
+    //trigger validation SHow/Hide
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const inputs = form.querySelectorAll('input');
+
+            // Show validation messages when the form is submitted
+            form.addEventListener('submit', function (event) {
+                inputs.forEach(input => {
+                    const validationSpan = input.nextElementSibling;
+                    if (validationSpan && validationSpan.tagName.toLowerCase() === 'span') {
+                        // Show the validation span if there's a validation error
+                        validationSpan.style.display = 'block';
+                    }
+                });
+            });
+
+            // Show validation messages when the user interacts with the input fields
+            inputs.forEach(input => {
+                input.addEventListener('blur', function () {
+                    const validationSpan = input.nextElementSibling;
+                    if (validationSpan && validationSpan.tagName.toLowerCase() === 'span') {
+                        // Show the validation span if there's a validation error
+                        validationSpan.style.display = 'block';
+                    }
+                });
+            });
+        });
+    // Save data to localStorage whenever a selection changes
+    document.getElementById('manufacturerSelect').addEventListener('change', saveSelections);
+    document.getElementById('modelSelect').addEventListener('change', saveSelections);
+    document.getElementById('trimSelect').addEventListener('change', saveSelections);
+    document.getElementById('VehicleRate').addEventListener('input', saveSelections);
+    document.getElementById('VehicleBodyNumber').addEventListener('input', saveSelections);
+    document.getElementById('VehicleEngineNumber').addEventListener('input', saveSelections);
+    document.getElementById('VehicleNumber').addEventListener('input', saveSelections);
+
+    function saveSelections() {
+        const selections = {
+            manufacturer: document.getElementById('manufacturerSelect').value,
+            model: document.getElementById('modelSelect').value,
+            version: document.getElementById('trimSelect').value,
+            rate: document.getElementById('VehicleRate').value,
+            bodyNumber: document.getElementById('VehicleBodyNumber').value,
+            engineNumber: document.getElementById('VehicleEngineNumber').value,
+            vehicleNumber: document.getElementById('VehicleNumber').value,
+        };
+        localStorage.setItem('vehicleSelections', JSON.stringify(selections));
+    }
+
+    // Load data from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        const savedSelections = JSON.parse(localStorage.getItem('vehicleSelections'));
+        if (savedSelections) {
+            document.getElementById('manufacturerSelect').value = savedSelections.manufacturer;
+            populateModels(savedSelections.manufacturer, savedSelections.model);
+            populateVersions(savedSelections.model, savedSelections.version);
+
+            document.getElementById('VehicleRate').value = savedSelections.rate;
+            document.getElementById('VehicleBodyNumber').value = savedSelections.bodyNumber;
+            document.getElementById('VehicleEngineNumber').value = savedSelections.engineNumber;
+            document.getElementById('VehicleNumber').value = savedSelections.vehicleNumber;
+
+            // Enable the dropdowns if they were previously populated
+            document.getElementById('modelSelect').disabled = !savedSelections.manufacturer;
+            document.getElementById('trimSelect').disabled = !savedSelections.model;
+
+            // Trigger the live preview update
+            updateLivePreview();
+        }
+    });
+
+    function toggleHelpSection() {
+        const helpSection = document.getElementById('helpSection');
+        if (helpSection.classList.contains('collapse')) {
+            helpSection.classList.remove('collapse');
+            helpSection.classList.add('show');
+        } else {
+            helpSection.classList.remove('show');
+            helpSection.classList.add('collapse');
+        }
+    }
+
+
+    // Fetch car data and populate the manufacturer dropdown
+    async function loadCarData() {
+        try {
+            const response = await fetch('/api/cars');
+            carData = await response.json();
+            populateSelect('manufacturerSelect', carData, 'codename', 'name');
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+    }
+
+    // Populate models based on the saved manufacturer
+    function populateModels(manufacturer, selectedModel) {
+        if (manufacturer) {
+            const manufacturerData = carData.find(m => m.codename === manufacturer);
+            if (manufacturerData) {
+                populateSelect('modelSelect', manufacturerData.models, 'codename', 'name');
+                document.getElementById('modelSelect').value = selectedModel;
+                document.getElementById('modelSelect').disabled = false;
+            }
+        }
+    }
+
+    // Populate versions based on the saved model
+    function populateVersions(model, selectedVersion) {
+        const manufacturer = document.getElementById('manufacturerSelect').value;
+        if (model && manufacturer) {
+            const manufacturerData = carData.find(m => m.codename === manufacturer);
+            const modelData = manufacturerData.models.find(m => m.codename === model);
+            if (modelData) {
+                populateSelect('trimSelect', modelData.trims, 'codename', 'name');
+                document.getElementById('trimSelect').value = selectedVersion;
+                document.getElementById('trimSelect').disabled = false;
+            }
+        }
+    }
+
+    // Generic function to populate a dropdown
+    function populateSelect(selectId, data, valueField, textField) {
+        const select = document.getElementById(selectId);
+        select.innerHTML = '<option value="">Choose</option>' + data.map(item => `<option value="${item[valueField]}">${item[textField]}</option>`).join('');
+    }
+
+    // Event listener for manufacturer dropdown change
+    document.getElementById('manufacturerSelect').addEventListener('change', function () {
+        const manufacturerCode = this.value;
+        const modelSelect = document.getElementById('modelSelect');
+        const trimSelect = document.getElementById('trimSelect');
+
+        // Enable/disable dropdowns and clear previous options
+        modelSelect.disabled = !manufacturerCode;
+        trimSelect.disabled = true;
+        modelSelect.innerHTML = '<option value="">Choose Model</option>';
+        trimSelect.innerHTML = '<option value="">Choose Version</option>';
+
+        // Populate models if a manufacturer is selected
+        if (manufacturerCode) {
+            const manufacturer = carData.find(m => m.codename == manufacturerCode);
+            if (manufacturer) {
+                populateSelect('modelSelect', manufacturer.models, 'codename', 'name');
+            }
+        }
+    });
+
+    // Event listener for model dropdown change
+    document.getElementById('modelSelect').addEventListener('change', function () {
+        const manufacturerCode = document.getElementById('manufacturerSelect').value;
+        const modelCode = this.value;
+        const trimSelect = document.getElementById('trimSelect');
+
+        // Enable/disable trim dropdown and clear previous options
+        trimSelect.disabled = !modelCode;
+        trimSelect.innerHTML = '<option value="">Choose Version</option>';
+
+        // Populate trims if a model is selected
+        if (modelCode) {
+            const manufacturer = carData.find(m => m.codename == manufacturerCode);
+            const model = manufacturer.models.find(m => m.codename == modelCode);
+            if (model) {
+                populateSelect('trimSelect', model.trims, 'codename', 'name');
+            }
+        }
+        // Update live preview when model changes
+        updateLivePreview();
+    });
+
+    // Event listener for trim dropdown change
+    document.getElementById('trimSelect').addEventListener('change', function () {
+        updateLivePreview();
+    });
+
+    // Reset Form button
+    function resetForm() {
+        document.querySelector('form').reset();
+        document.getElementById('modelSelect').disabled = true;
+        document.getElementById('trimSelect').disabled = true;
+        localStorage.removeItem('vehicleSelections'); // Clear the saved selections
+        document.getElementById('vehiclePreview').src = ''; // Clear the preview image
+
+        // Explicitly clear these fields if they aren't being reset automatically
+        document.getElementById('VehicleBodyNumber').value = '';
+        document.getElementById('VehicleEngineNumber').value = '';
+        document.getElementById('VehicleNumber').value = '';
+    }
+
+    // Load car data when the page loads
+    loadCarData();
+</script>
+

@@ -1,0 +1,48 @@
+﻿@model Project3.Models.VehiclePolicyType
+
+@{
+    ViewData["Title"] = "Vehicle Policy Type Details";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Index" class="btn btn-rounded btn-secondary">
+                        Back to List
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.PolicyName)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.PolicyName)</dd>
+
+                            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.PolicyDetails)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.PolicyDetails)</dd>
+
+                            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.VehicleRate)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.VehicleRate)</dd>
+                        </dl>
+                        <div class="text-right">
+                            <a asp-action="Edit" asp-route-id="@Model.PolicyTypeId" class="btn btn-warning">Edit</a>
+                            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

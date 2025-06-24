@@ -1,0 +1,83 @@
+﻿@model Project3.ModelsView.Identity.ProfileViewModel;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<section class="section doctors">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-3 text-left">
+                <div class="btn-group btn-group-toggle d-flex flex-column" >
+                    <label class="btn active text-left">
+                        <input type="radio" name="shuffle-filter" value="profile" checked="checked" />Profile
+                    </label>
+                    <label class=" text-left  px-4 mt-3">
+                        <h6>
+                            @if (!Model.IsGoogleLogin)
+                            {
+                                <a asp-action="ChangePassword" asp-controller="Profile">Change Password</a>
+
+                            }
+                         
+
+                        </h6>
+                    </label>
+
+                </div>
+            </div>
+            <div class="col-9 sidebar-widget schedule-widget ">
+                <div class="row shuffle-wrapper portfolio-gallery ">
+                    <div class="col-lg-12 col-sm-6 col-md-6 mb-4 shuffle-item " data-groups='["profile"]'>
+                       <div class="d-flex justify-content-between">
+                            <h5>
+                                My Profile
+                            </h5>
+                            <a asp-action="UpdateProfile">Update Profile<i class="icofont-pencil pl-1  "></i></a>
+                       </div>
+                       <ul class="list-inline d-flex">
+                            <li class="list-inline-item"><strong>Username:</strong>&nbsp; <span class="text-danger">@Model.Fullname</span></li>
+                       </ul>
+                        <ul class="list-inline d-flex">
+                            <li class="list-inline-item"><strong>Email:</strong> &nbsp; <span class="text-danger">@Model.Email</span></li>
+                        </ul>
+                        <ul class="list-inline d-flex">
+                            <li class="list-inline-item"><strong>Phone:</strong>&nbsp; <span class="text-danger">@Model.Phone</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="~/FE/js/toastr.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    @if (TempData["ChangePasswordSuccess"] != null)
+    {
+        <text>
+                toastr.success('@TempData["ChangePasswordSuccess"]');
+        </text>
+    }
+                    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+    @if (TempData["ProfileSuccessMessage"] != null)
+    {
+        <text>
+                toastr.success('@TempData["ProfileSuccessMessage"]');
+        </text>
+    }
+                        });
+</script>
+
+
+
+

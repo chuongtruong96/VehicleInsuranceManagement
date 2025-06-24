@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Project3.ModelsView.ClaimDetailViewModel>
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+
+}
+
+
+                           
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Policy Number</th>
+            <th scope="col">Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.PolicyNumber</td>
+                <td><a asp-action="Detail" asp-route-id="@claim.Id" >Claim</a></td>
+            </tr>
+        }
+       
+    </tbody>
+</table>

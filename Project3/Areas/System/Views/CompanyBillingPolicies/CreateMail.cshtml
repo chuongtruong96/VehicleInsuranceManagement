@@ -1,0 +1,65 @@
+﻿@model Project3.ModelsView.MailData
+
+@{
+    ViewData["Title"] = "Send Mail";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Index" class="btn btn-rounded btn-secondary">
+                        Back to List
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-action="SendMail">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="ReceiverEmail" class="form-label"></label>
+                                <input asp-for="ReceiverEmail" class="form-control" />
+                                <span asp-validation-for="ReceiverEmail" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="ReceiverName" class="form-label"></label>
+                                <input asp-for="ReceiverName" class="form-control" />
+                                <span asp-validation-for="ReceiverName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Title" class="form-label"></label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Body" class="form-label"></label>
+                                <textarea asp-for="Body" class="form-control"></textarea>
+                                <span asp-validation-for="Body" class="text-danger"></span>
+                            </div>
+
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

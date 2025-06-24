@@ -1,0 +1,59 @@
+﻿@model Project3.Models.VehicleWarranty
+
+@{
+    ViewData["Title"] = "Create Vehicle Warranty";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Index" class="btn btn-rounded btn-secondary">
+                        Back to List
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2>@ViewData["Title"]</h2>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="WarrantyType" class="control-label"></label>
+                                <input asp-for="WarrantyType" class="form-control" />
+                                <span asp-validation-for="WarrantyType" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="WarrantyDuration" class="control-label"></label>
+                                <input asp-for="WarrantyDuration" class="form-control" />
+                                <span asp-validation-for="WarrantyDuration" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="WarrantyDetails" class="control-label"></label>
+                                <input asp-for="WarrantyDetails" class="form-control" />
+                                <span asp-validation-for="WarrantyDetails" class="text-danger"></span>
+                            </div>
+                            <div class="form-group text-right">
+                                <button type="submit" class="btn btn-primary">Create</button>
+                                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

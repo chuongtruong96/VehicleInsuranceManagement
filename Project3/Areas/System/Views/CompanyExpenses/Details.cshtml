@@ -1,0 +1,33 @@
+﻿@model Project3.Models.CompanyExpense
+@{
+    ViewData["Title"] = "Company Expense Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white text-center">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Date of Expense:</label>
+                        <p>@Model.DateOfExpenses</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Type of Expense:</label>
+                        <p>@Model.TypeOfExpense</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount of Expense:</label>
+                        <p>@Model.AmountOfExpense</p>
+                    </div>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

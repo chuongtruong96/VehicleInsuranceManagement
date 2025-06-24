@@ -1,0 +1,158 @@
+﻿@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+
+<section class="banner">
+	<div class="container">
+		<div class="row" style="flex-wrap:unset;">
+			<div class="col-lg-6 col-md-12 col-xl-7"></div>
+			<div class="col-lg-6 col-md-12 col-xl-7">
+				<div class="block pt-5" >
+					<div class="divider mb-3"></div>
+					<span class="text-uppercase text-sm letter-spacing ">Vehicle Insurance</span>
+					<h1 class="mb-3 mt-3">Your reliable partner for car insurance</h1>
+
+					<p class="mb-4 pr-5">Offering comprehensive coverage and peace of mind on the road.</p>
+					<div class="btn-container ">
+						<a asp-controller="InsuranceProducts" asp-action="index" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">View insurance packages <i class="icofont-simple-right ml-2  "></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="feature-block d-lg-flex">
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-car-alt-1"></i>
+						</div>
+						<span>24/7 Customer Support</span>
+						<h4 class="mb-3">Online Assistance</h4>
+						<p class="mb-4">Get around-the-clock support for your car insurance needs. We are here to assist you anytime, anywhere. We are here to assist you anytime, anywhere.</p>
+						<a asp-controller="ContactUsUser" asp-action="Create" class="btn btn-main btn-round-full">Get Support</a>
+					</div>
+
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-ui-browser"></i>
+						</div>
+						<span>Online Services</span>
+						<h4 class="mb-3">Available 24/7</h4>
+						<p class="mb-4">Our online platform is available 24/7 for you to manage your car insurance policies, file claims, and more. Access all our services from the comfort of your home.</p>
+						<a asp-controller="ContactUsUser" asp-action="Create" class="btn btn-main btn-round-full">Explore Services</a>
+					</div>
+
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-phone"></i>
+						</div>
+						<span>Emergency Assistance</span>
+						<h4 class="mb-3">123-456-789</h4>
+						<p>In case of emergencies, our team is ready to assist you. Contact us for urgent car insurance services and support.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+<section class="section appoinment">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6 ">
+				<div class="appoinment-content">
+					<img src="images/about/img-3.jpg" alt="" class="img-fluid">
+					<div class="emergency">
+						<h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>+123 456 789</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-10 ">
+				<div class="appoinment-wrap mt-5 mt-lg-0">
+					<h2 class="mb-2 title-color">Get a Quote</h2>
+					<p class="mb-4">Explore our comprehensive car insurance plans and find the coverage that fits your needs. Enjoy seamless online transactions and quick, reliable support, all from the comfort of your home.</p>
+					<form id="#" class="appoinment-form" method="post" action="#">
+						<div class="row">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<select class="form-control" id="exampleFormControlSelect1">
+										<option>Car Company</option>
+										
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<select class="form-control" id="exampleFormControlSelect2">
+										<option>Car Brand</option>
+										
+									</select>
+								</div>
+							</div>
+
+							<div class="col-lg-4">
+								<div class="form-group">
+									<select class="form-control" id="exampleFormControlSelect2">
+										<option>Car Version</option>
+										
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Car name Owner's">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<input  type="text" class="form-control" placeholder="Car body number">
+								</div>
+							</div>
+						
+
+							<div class="col-lg-6">
+								<div class="form-group">
+									<input  type="text" class="form-control" placeholder="Car engine number">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Car number">
+								</div>
+							</div>
+						</div>
+						
+
+						<a class="btn btn-main btn-round-full" asp-controller="InsuranceProducts" asp-action="Index">Get a Quote <i class="icofont-simple-right ml-2  "></i></a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="~/FE/js/toastr.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+	@if (TempData["SuccessMessage"] != null)
+	{
+		<text>
+				toastr.success('@TempData["SuccessMessage"]');
+		</text>
+	}
+				});
+</script>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Project3.Models.VehicleInformation>
+
+@{
+    ViewData["Title"] = "Vehicle Information List";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Create" class="btn btn-rounded btn-info">
+                        <span class="btn-icon-left text-info">
+                            <i class="fa fa-plus color-info"></i>
+                        </span>Create New
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example" class="display" style="min-width: 845px; color:black;">
+                                <thead>
+                                    <tr>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleName)</th>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleOwnerName)</th>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleModel)</th>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleVersion)</th>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleRate)</th>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleBodyNumber)</th>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleEngineNumber)</th>
+                                        <th>@Html.DisplayNameFor(model => model.VehicleNumber)</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleName)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleOwnerName)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleModel)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleVersion)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleRate)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleBodyNumber)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleEngineNumber)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.VehicleNumber)</td>
+                                            <td>
+                                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

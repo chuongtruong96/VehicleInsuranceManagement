@@ -1,0 +1,85 @@
+﻿@model Project3.Models.CompanyBillingPolicy;
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+<h5>@Model.PolicyNumber</h5>
+<h5>@Model.CustomerName</h5>
+
+@* <div class="container mt-5">
+    <h1 class="text-center mb-5">Claim Detail</h1>
+    <form asp-action="Detail" method="post">
+        <div class="row">
+            <!-- Left Column for Inputs -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label  class="form-label">Policy Number <i class="fa fa-id-badge text-primary"></i></label>
+                    <input  class="form-control" readonly />@Model.Detail
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="CustomerName" class="form-label">Customer Name <i class="fa fa-user text-primary"></i></label>
+                    <input asp-for="CustomerName" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="CustomerPhoneNumber" class="form-label">Customer Phone <i class="fa fa-phone text-primary"></i></label>
+                    <input asp-for="CustomerPhoneNumber" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="CustomerAddProve" class="form-label">Your Adress <i class="fa fa-home text-primary"></i></label>
+                    <input asp-for="CustomerAddProve" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Amount" class="form-label">Amount <i class="fa fa-file-alt text-primary"></i></label>
+                    <input asp-for="Amount" class="form-control" readonly />
+                </div>
+
+                <div class="form-group mb-4">
+                    <label asp-for="Date" class="form-label">Insurance Purchase Date <i class="fa fa-file-alt text-primary"></i></label>
+                    <input asp-for="Date" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    @* <label asp-for="PlaceOfAccident" class="form-label">Place Of Accident <i class="fa fa-file-alt text-primary"></i></label>
+                    <input asp-for="PlaceOfAccident" class="form-control"  /> 
+                </div>
+            </div>
+
+            <!-- Right Column for Text Inputs -->
+            <div class="col-md-6">
+               
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleModel" class="form-label">Vehicle Model <i class="fa fa-car text-primary"></i></label>
+                    <input asp-for="VehicleModel" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleRate" class="form-label">Vehicle Rate <i class="fa fa-dollar-sign text-primary"></i></label>
+                    <input asp-for="VehicleRate" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleBodyNumber" class="form-label">Body Number <i class="fa fa-hashtag text-primary"></i></label>
+                    <input asp-for="VehicleBodyNumber" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="VehicleEngineNumber" class="form-label">Engine Number <i class="fa fa-cogs text-primary"></i></label>
+                    <input asp-for="VehicleEngineNumber" class="form-control" readonly />
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Claim.DateOfAccident" class="form-label">Billing Date <i class="fa fa-calendar-alt text-primary"></i></label>
+                    <input asp-for="Claim.DateOfAccident" class="form-control" readonly />
+                </div>
+               @*  <div class="form-group mb-4">
+                    <label asp-for="DateOfAccident" class="form-label">Date of accident <i class="fa fa-calendar-alt text-primary"></i></label>
+                    <input asp-for="DateOfAccident" class="form-control"  />
+                </div> *@
+               
+               @*  <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg w-50 mb-3">
+                        <i class="fa fa-credit-card me-2"></i>Claim Compensation
+                    </button>
+                    <a asp-controller="InsuranceProcess" asp-action="Create" class="btn btn-secondary btn-lg w-50">
+                        <i class="fa fa-arrow-left me-2"></i> Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>  *@

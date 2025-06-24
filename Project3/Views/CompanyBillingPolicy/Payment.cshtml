@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Company Billing Policy";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+
+
+<style>
+    .payment-option {
+        margin-top: 50px;
+    }
+
+    .card {
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    .card-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .card img {
+        max-width: 80px;
+        margin-right: 20px;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+        .card-title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+            .card-title a:hover {
+                text-decoration: underline;
+            }
+
+    .btn-custom {
+        background-color: #ff4081;
+        border-color: #ff4081;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+        .btn-custom:hover {
+            background-color: #e73370;
+            border-color: #e73370;
+        }
+</style>
+
+<div class="container payment-option">
+    <h2 class="text-center mb-5">Select Payment Option</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal">
+                    <h5 class="card-title"><a asp-controller="Payment" asp-action="PaymentWithPaypal">Pay with PayPal</a></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" alt="Momo">
+                    <form asp-controller="Payment" asp-action="MomoPayment" method="post">
+                        <h5 class="card-title">
+                            <button type="submit" class="btn btn-custom">Pay with MoMo</button>
+                        </h5>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

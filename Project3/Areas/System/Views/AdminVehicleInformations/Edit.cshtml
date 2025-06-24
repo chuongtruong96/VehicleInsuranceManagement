@@ -1,0 +1,77 @@
+﻿@model Project3.Models.VehicleInformation
+
+@{
+    ViewData["Title"] = "Edit Vehicle Information";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-white text-center">
+                    <h2>@ViewData["Title"]</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleName" class="form-label"></label>
+                            <input asp-for="VehicleName" class="form-control" />
+                            <span asp-validation-for="VehicleName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleOwnerName" class="form-label"></label>
+                            <input asp-for="VehicleOwnerName" class="form-control" />
+                            <span asp-validation-for="VehicleOwnerName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleModel" class="form-label"></label>
+                            <input asp-for="VehicleModel" class="form-control" />
+                            <span asp-validation-for="VehicleModel" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleVersion" class="form-label"></label>
+                            <input asp-for="VehicleVersion" class="form-control" />
+                            <span asp-validation-for="VehicleVersion" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleRate" class="form-label"></label>
+                            <input asp-for="VehicleRate" class="form-control" />
+                            <span asp-validation-for="VehicleRate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleBodyNumber" class="form-label"></label>
+                            <input asp-for="VehicleBodyNumber" class="form-control" />
+                            <span asp-validation-for="VehicleBodyNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleEngineNumber" class="form-label"></label>
+                            <input asp-for="VehicleEngineNumber" class="form-control" />
+                            <span asp-validation-for="VehicleEngineNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="VehicleNumber" class="form-label"></label>
+                            <input asp-for="VehicleNumber" class="form-control" />
+                            <span asp-validation-for="VehicleNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-warning">Save</button>
+                            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

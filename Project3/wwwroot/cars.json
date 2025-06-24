@@ -1,0 +1,873 @@
+[
+    {
+      "name": "Toyota",
+      "code": 1,
+      "codename": "toyota",
+      "models": [
+        {
+          "name": "Camry",
+          "code": 1,
+          "codename": "camry",
+          "trims": [
+            {
+              "name": "LE",
+              "code": 1,
+              "codename": "le"
+            },
+            {
+              "name": "SE",
+              "code": 2,
+              "codename": "se"
+            },
+            {
+              "name": "XLE",
+              "code": 3,
+              "codename": "xle"
+            },
+            {
+              "name": "XSE",
+              "code": 4,
+              "codename": "xse"
+            },
+            {
+              "name": "Hybrid",
+              "code": 5,
+              "codename": "hybrid"
+            }
+          ]
+        },
+        {
+          "name": "Corolla",
+          "code": 2,
+          "codename": "corolla",
+          "trims": [
+            {
+              "name": "L",
+              "code": 1,
+              "codename": "l"
+            },
+            {
+              "name": "LE",
+              "code": 2,
+              "codename": "le"
+            },
+            {
+              "name": "SE",
+              "code": 3,
+              "codename": "se"
+            },
+            {
+              "name": "XLE",
+              "code": 4,
+              "codename": "xle"
+            },
+            {
+              "name": "XSE",
+              "code": 5,
+              "codename": "xse"
+            },
+            {
+              "name": "Hybrid",
+              "code": 6,
+              "codename": "hybrid"
+            }
+          ]
+        },
+        {
+          "name": "RAV4",
+          "code": 3,
+          "codename": "rav4",
+          "trims": [
+            {
+              "name": "LE",
+              "code": 1,
+              "codename": "le"
+            },
+            {
+              "name": "XLE",
+              "code": 2,
+              "codename": "xle"
+            },
+            {
+              "name": "XLE Premium",
+              "code": 3,
+              "codename": "xle_premium"
+            },
+            {
+              "name": "Adventure",
+              "code": 4,
+              "codename": "adventure"
+            },
+            {
+              "name": "TRD Off-Road",
+              "code": 5,
+              "codename": "trd_off_road"
+            },
+            {
+              "name": "Limited",
+              "code": 6,
+              "codename": "limited"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Honda",
+      "code": 2,
+      "codename": "honda",
+      "models": [
+        {
+          "name": "Civic",
+          "code": 1,
+          "codename": "civic",
+          "trims": [
+            {
+              "name": "LX",
+              "code": 1,
+              "codename": "lx"
+            },
+            {
+              "name": "Sport",
+              "code": 2,
+              "codename": "sport"
+            },
+            {
+              "name": "EX",
+              "code": 3,
+              "codename": "ex"
+            },
+            {
+              "name": "Touring",
+              "code": 4,
+              "codename": "touring"
+            }
+          ]
+        },
+        {
+          "name": "Accord",
+          "code": 2,
+          "codename": "accord",
+          "trims": [
+            {
+              "name": "LX",
+              "code": 1,
+              "codename": "lx"
+            },
+            {
+              "name": "Sport",
+              "code": 2,
+              "codename": "sport"
+            },
+            {
+              "name": "EX-L",
+              "code": 3,
+              "codename": "ex_l"
+            },
+            {
+              "name": "Touring",
+              "code": 4,
+              "codename": "touring"
+            }
+          ]
+        },
+        {
+          "name": "CR-V",
+          "code": 3,
+          "codename": "cr_v",
+          "trims": [
+            {
+              "name": "LX",
+              "code": 1,
+              "codename": "lx"
+            },
+            {
+              "name": "EX",
+              "code": 2,
+              "codename": "ex"
+            },
+            {
+              "name": "EX-L",
+              "code": 3,
+              "codename": "ex_l"
+            },
+            {
+              "name": "Touring",
+              "code": 4,
+              "codename": "touring"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ford",
+      "code": 3,
+      "codename": "ford",
+      "models": [
+        {
+          "name": "Fiesta",
+          "code": 1,
+          "codename": "fiesta",
+          "trims": [
+            {
+              "name": "S",
+              "code": 1,
+              "codename": "s"
+            },
+            {
+              "name": "SE",
+              "code": 2,
+              "codename": "se"
+            },
+            {
+              "name": "Titanium",
+              "code": 3,
+              "codename": "titanium"
+            }
+          ]
+        },
+        {
+          "name": "Focus",
+          "code": 2,
+          "codename": "focus",
+          "trims": [
+            {
+              "name": "S",
+              "code": 1,
+              "codename": "s"
+            },
+            {
+              "name": "SE",
+              "code": 2,
+              "codename": "se"
+            },
+            {
+              "name": "SEL",
+              "code": 3,
+              "codename": "sel"
+            },
+            {
+              "name": "Titanium",
+              "code": 4,
+              "codename": "titanium"
+            }
+          ]
+        },
+        {
+          "name": "Mustang",
+          "code": 3,
+          "codename": "mustang",
+          "trims": [
+            {
+              "name": "EcoBoost",
+              "code": 1,
+              "codename": "ecoboost"
+            },
+            {
+              "name": "GT",
+              "code": 2,
+              "codename": "gt"
+            },
+            {
+              "name": "Mach 1",
+              "code": 3,
+              "codename": "mach_1"
+            },
+            {
+              "name": "Shelby GT500",
+              "code": 4,
+              "codename": "shelby_gt500"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BMW",
+      "code": 4,
+      "codename": "bmw",
+      "models": [
+        {
+          "name": "3 Series",
+          "code": 1,
+          "codename": "3_series",
+          "trims": [
+            {
+              "name": "330i",
+              "code": 1,
+              "codename": "330i"
+            },
+            {
+              "name": "330e",
+              "code": 2,
+              "codename": "330e"
+            },
+            {
+              "name": "M340i",
+              "code": 3,
+              "codename": "m340i"
+            }
+          ]
+        },
+        {
+          "name": "5 Series",
+          "code": 2,
+          "codename": "5_series",
+          "trims": [
+            {
+              "name": "530i",
+              "code": 1,
+              "codename": "530i"
+            },
+            {
+              "name": "540i",
+              "code": 2,
+              "codename": "540i"
+            },
+            {
+              "name": "M550i",
+              "code": 3,
+              "codename": "m550i"
+            }
+          ]
+        },
+        {
+          "name": "X5",
+          "code": 3,
+          "codename": "x5",
+          "trims": [
+            {
+              "name": "sDrive40i",
+              "code": 1,
+              "codename": "sdrive40i"
+            },
+            {
+              "name": "xDrive40i",
+              "code": 2,
+              "codename": "xdrive40i"
+            },
+            {
+              "name": "xDrive50i",
+              "code": 3,
+              "codename": "xdrive50i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mercedes-Benz",
+      "code": 5,
+      "codename": "mercedes_benz",
+      "models": [
+        {
+          "name": "C-Class",
+          "code": 1,
+          "codename": "c_class",
+          "trims": [
+            {
+              "name": "C 300",
+              "code": 1,
+              "codename": "c300"
+            },
+            {
+              "name": "C 43 AMG",
+              "code": 2,
+              "codename": "c43_amg"
+            },
+            {
+              "name": "C 63 AMG",
+              "code": 3,
+              "codename": "c63_amg"
+            }
+          ]
+        },
+        {
+          "name": "E-Class",
+          "code": 2,
+          "codename": "e_class",
+          "trims": [
+            {
+              "name": "E 350",
+              "code": 1,
+              "codename": "e350"
+            },
+            {
+              "name": "E 450",
+              "code": 2,
+              "codename": "e450"
+            },
+            {
+              "name": "E 53 AMG",
+              "code": 3,
+              "codename": "e53_amg"
+            }
+          ]
+        },
+        {
+          "name": "GLC",
+          "code": 3,
+          "codename": "glc",
+          "trims": [
+            {
+              "name": "GLC 300",
+              "code": 1,
+              "codename": "glc300"
+            },
+            {
+              "name": "GLC 43 AMG",
+              "code": 2,
+              "codename": "glc43_amg"
+            },
+            {
+              "name": "GLC 63 AMG",
+              "code": 3,
+              "codename": "glc63_amg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Audi",
+      "code": 6,
+      "codename": "audi",
+      "models": [
+        {
+          "name": "A4",
+          "code": 1,
+          "codename": "a4",
+          "trims": [
+            {
+              "name": "Premium",
+              "code": 1,
+              "codename": "premium"
+            },
+            {
+              "name": "Premium Plus",
+              "code": 2,
+              "codename": "premium_plus"
+            },
+            {
+              "name": "Prestige",
+              "code": 3,
+              "codename": "prestige"
+            }
+          ]
+        },
+        {
+          "name": "Q5",
+          "code": 2,
+          "codename": "q5",
+          "trims": [
+            {
+              "name": "Premium",
+              "code": 1,
+              "codename": "premium"
+            },
+            {
+              "name": "Premium Plus",
+              "code": 2,
+              "codename": "premium_plus"
+            },
+            {
+              "name": "Prestige",
+              "code": 3,
+              "codename": "prestige"
+            }
+          ]
+        },
+        {
+          "name": "A6",
+          "code": 3,
+          "codename": "a6",
+          "trims": [
+            {
+              "name": "Premium",
+              "code": 1,
+              "codename": "premium"
+            },
+            {
+              "name": "Premium Plus",
+              "code": 2,
+              "codename": "premium_plus"
+            },
+            {
+              "name": "Prestige",
+              "code": 3,
+              "codename": "prestige"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chevrolet",
+      "code": 7,
+      "codename": "chevrolet",
+      "models": [
+        {
+          "name": "Malibu",
+          "code": 1,
+          "codename": "malibu",
+          "trims": [
+            {
+              "name": "L",
+              "code": 1,
+              "codename": "l"
+            },
+            {
+              "name": "LS",
+              "code": 2,
+              "codename": "ls"
+            },
+            {
+              "name": "RS",
+              "code": 3,
+              "codename": "rs"
+            },
+            {
+              "name": "LT",
+              "code": 4,
+              "codename": "lt"
+            },
+            {
+              "name": "Premier",
+              "code": 5,
+              "codename": "premier"
+            }
+          ]
+        },
+        {
+          "name": "Equinox",
+          "code": 2,
+          "codename": "equinox",
+          "trims": [
+            {
+              "name": "L",
+              "code": 1,
+              "codename": "l"
+            },
+            {
+              "name": "LS",
+              "code": 2,
+              "codename": "ls"
+            },
+            {
+              "name": "LT",
+              "code": 3,
+              "codename": "lt"
+            },
+            {
+              "name": "Premier",
+              "code": 4,
+              "codename": "premier"
+            }
+          ]
+        },
+        {
+          "name": "Traverse",
+          "code": 3,
+          "codename": "traverse",
+          "trims": [
+            {
+              "name": "L",
+              "code": 1,
+              "codename": "l"
+            },
+            {
+              "name": "LS",
+              "code": 2,
+              "codename": "ls"
+            },
+            {
+              "name": "LT",
+              "code": 3,
+              "codename": "lt"
+            },
+            {
+              "name": "RS",
+              "code": 4,
+              "codename": "rs"
+            },
+            {
+              "name": "Premier",
+              "code": 5,
+              "codename": "premier"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hyundai",
+      "code": 8,
+      "codename": "hyundai",
+      "models": [
+        {
+          "name": "Elantra",
+          "code": 1,
+          "codename": "elantra",
+          "trims": [
+            {
+              "name": "SE",
+              "code": 1,
+              "codename": "se"
+            },
+            {
+              "name": "SEL",
+              "code": 2,
+              "codename": "sel"
+            },
+            {
+              "name": "Limited",
+              "code": 3,
+              "codename": "limited"
+            },
+            {
+              "name": "N Line",
+              "code": 4,
+              "codename": "n_line"
+            }
+          ]
+        },
+        {
+          "name": "Sonata",
+          "code": 2,
+          "codename": "sonata",
+          "trims": [
+            {
+              "name": "SE",
+              "code": 1,
+              "codename": "se"
+            },
+            {
+              "name": "SEL",
+              "code": 2,
+              "codename": "sel"
+            },
+            {
+              "name": "Limited",
+              "code": 3,
+              "codename": "limited"
+            },
+            {
+              "name": "N Line",
+              "code": 4,
+              "codename": "n_line"
+            }
+          ]
+        },
+        {
+          "name": "Tucson",
+          "code": 3,
+          "codename": "tucson",
+          "trims": [
+            {
+              "name": "SE",
+              "code": 1,
+              "codename": "se"
+            },
+            {
+              "name": "SEL",
+              "code": 2,
+              "codename": "sel"
+            },
+            {
+              "name": "Limited",
+              "code": 3,
+              "codename": "limited"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kia",
+      "code": 9,
+      "codename": "kia",
+      "models": [
+        {
+          "name": "Forte",
+          "code": 1,
+          "codename": "forte",
+          "trims": [
+            {
+              "name": "FE",
+              "code": 1,
+              "codename": "fe"
+            },
+            {
+              "name": "LXS",
+              "code": 2,
+              "codename": "lxs"
+            },
+            {
+              "name": "GT-Line",
+              "code": 3,
+              "codename": "gt_line"
+            },
+            {
+              "name": "EX",
+              "code": 4,
+              "codename": "ex"
+            },
+            {
+              "name": "GT",
+              "code": 5,
+              "codename": "gt"
+            }
+          ]
+        },
+        {
+          "name": "Optima",
+          "code": 2,
+          "codename": "optima",
+          "trims": [
+            {
+              "name": "LX",
+              "code": 1,
+              "codename": "lx"
+            },
+            {
+              "name": "S",
+              "code": 2,
+              "codename": "s"
+            },
+            {
+              "name": "EX",
+              "code": 3,
+              "codename": "ex"
+            },
+            {
+              "name": "SX",
+              "code": 4,
+              "codename": "sx"
+            }
+          ]
+        },
+        {
+          "name": "Sorento",
+          "code": 3,
+          "codename": "sorento",
+          "trims": [
+            {
+              "name": "L",
+              "code": 1,
+              "codename": "l"
+            },
+            {
+              "name": "LX",
+              "code": 2,
+              "codename": "lx"
+            },
+            {
+              "name": "S",
+              "code": 3,
+              "codename": "s"
+            },
+            {
+              "name": "EX",
+              "code": 4,
+              "codename": "ex"
+            },
+            {
+              "name": "SX",
+              "code": 5,
+              "codename": "sx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Honda",
+      "code": 10,
+      "codename": "honda",
+      "models": [
+        {
+          "name": "Civic",
+          "code": 1,
+          "codename": "civic",
+          "trims": [
+            {
+              "name": "LX",
+              "code": 1,
+              "codename": "lx"
+            },
+            {
+              "name": "Sport",
+              "code": 2,
+              "codename": "sport"
+            },
+            {
+              "name": "EX",
+              "code": 3,
+              "codename": "ex"
+            },
+            {
+              "name": "Touring",
+              "code": 4,
+              "codename": "touring"
+            }
+          ]
+        },
+        {
+          "name": "Accord",
+          "code": 2,
+          "codename": "accord",
+          "trims": [
+            {
+              "name": "LX",
+              "code": 1,
+              "codename": "lx"
+            },
+            {
+              "name": "Sport",
+              "code": 2,
+              "codename": "sport"
+            },
+            {
+              "name": "EX",
+              "code": 3,
+              "codename": "ex"
+            },
+            {
+              "name": "Touring",
+              "code": 4,
+              "codename": "touring"
+            }
+          ]
+        },
+        {
+          "name": "CR-V",
+          "code": 3,
+          "codename": "cr_v",
+          "trims": [
+            {
+              "name": "LX",
+              "code": 1,
+              "codename": "lx"
+            },
+            {
+              "name": "EX",
+              "code": 2,
+              "codename": "ex"
+            },
+            {
+              "name": "EX-L",
+              "code": 3,
+              "codename": "ex_l"
+            },
+            {
+              "name": "Touring",
+              "code": 4,
+              "codename": "touring"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  

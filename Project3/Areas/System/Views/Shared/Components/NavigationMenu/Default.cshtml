@@ -1,0 +1,80 @@
+﻿@model Project3.Areas.System.Components.NavigationMenuViewModel
+
+
+@if (Model.IsAdmin || Model.IsAdminAccount)
+{
+    <li>
+        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+            <i class="fa fa-user mr-2"></i>
+            <span class="nav-text">Account Management</span>
+        </a>
+        <ul aria-expanded="false">
+            <li><a asp-action="Index" asp-controller="AccountManagement">List of accounts</a></li>
+            <li><a asp-controller="Role" asp-action="Index">Decentralization</a></li>
+        </ul>
+    </li>
+}
+
+@if (Model.IsAdminInsuranceProducts || Model.IsAdmin)
+{
+    <li>
+        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+            <i class="fa fa-user mr-2"></i>
+            <span class="nav-text">Insurance Products</span>
+        </a>
+        <ul aria-expanded="false">
+            <li><a asp-controller="AdminInsuranceProducts" asp-action="Index">Insurance Products</a></li>
+            <li><a asp-controller="VehiclePolicyTypes" asp-action="index">VehiclePolicyTypes</a></li>
+            <li><a asp-controller="VehicleWarranties" asp-action="index">VehicleWarranties</a></li>
+
+        </ul>
+    </li>
+
+
+
+}
+@if (Model.IsAdminVehicleInformations || Model.IsAdmin)
+{
+    <li>
+        <a asp-controller="AdminVehicleInformations" asp-action="Index" aria-expanded="false">
+            <i class="fa fa-file-image-o mr-2"></i><span class="nav-text">Vehicle Information</span>
+        </a>
+    </li>
+}
+@if (Model.IsAdminEstimates || Model.IsAdmin)
+{
+    <li>
+        <a asp-controller="AdminEstimates" asp-action="Index" aria-expanded="false">
+            <i class="fa fa-file-image-o mr-2"></i><span class="nav-text">Estimatation</span>
+        </a>
+    </li>
+}
+@if (Model.IsAdminInsuranceProcess || Model.IsAdmin)
+{
+    <li>
+        <a asp-controller="AdminInsuranceProcess" asp-action="Index" aria-expanded="false">
+            <i class="fa fa-file-image-o mr-2"></i><span class="nav-text">Insurance Process</span>
+        </a>
+    </li>
+}
+@if (Model.IsAdminCompanyBillingPolicies || Model.IsAdmin)
+{
+    <li>
+        <a asp-controller="CompanyBillingPolicies" asp-action="Index" aria-expanded="false">
+            <i class="fa fa-file-image-o mr-2"></i><span class="nav-text">Company Billing Policies</span>
+        </a>
+    </li>
+}
+@if (Model.IsAdminContactUs || Model.IsAdmin)
+{
+    <li>
+        <a asp-controller="ContactUsAdmin" asp-action="Index" aria-expanded="false">
+            <i class="fa fa-file-image-o mr-2"></i><span class="nav-text">Contact Us</span>
+        </a>
+    </li>
+}
+
+
+
+
+

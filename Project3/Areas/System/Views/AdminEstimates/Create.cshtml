@@ -1,0 +1,60 @@
+﻿@model Project3.Models.Estimate
+@{
+    ViewData["Title"] = "Create Estimate";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Create Estimate</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">
+                        Back to List
+                    </a>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2>@ViewData["Title"]</h2>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Create" method="post">
+                            <div class="form-group">
+                                <label for="VehicleId">Vehicle</label>
+                                <select asp-for="VehicleId" class="form-control" asp-items="ViewBag.Vehicles"></select>
+                                <span asp-validation-for="VehicleId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyTypeId">Policy Type</label>
+                                <select asp-for="PolicyTypeId" class="form-control" asp-items="ViewBag.PolicyTypes"></select>
+                                <span asp-validation-for="PolicyTypeId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="WarrantyId">Warranty</label>
+                                <select asp-for="WarrantyId" class="form-control" asp-items="ViewBag.Warranties"></select>
+                                <span asp-validation-for="WarrantyId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleRate">Estimated Cost (Vehicle Rate)</label>
+                                <input type="number" class="form-control" asp-for="VehicleRate" />
+                                <span asp-validation-for="VehicleRate" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-success">Create</button>
+                            <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

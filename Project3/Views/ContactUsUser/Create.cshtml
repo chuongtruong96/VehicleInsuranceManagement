@@ -1,0 +1,222 @@
+﻿@model Project3.ModelsView.ContactUsModelView
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+
+
+
+<section class="page-title bg-1">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block text-center">
+                    <span class="text-white">Contact Us</span>
+                    <h1 class="text-capitalize mb-5 text-lg">Get in Touch</h1>
+
+                    <!-- <ul class="list-inline breadcumb-nav">
+                      <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+                      <li class="list-inline-item"><span class="text-white">/</span></li>
+                      <li class="list-inline-item"><a href="#" class="text-white-50">Contact Us</a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact form start -->
+
+<section class="section contact-info pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="contact-block mb-4 mb-lg-0">
+                    <i class="icofont-live-support"></i>
+                    <h5>Call Us</h5>
+                    +123-456-789
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="contact-block mb-4 mb-lg-0">
+                    <i class="icofont-support-faq"></i>
+                    <h5>Email Us</h5>
+                    VehicleInsurance@mail.com
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="contact-block mb-4 mb-lg-0">
+                    <i class="icofont-location-pin"></i>
+                    <h5>Location</h5>
+                    New York, USA
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-form-wrap section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-title text-center">
+                    <h2 class="text-md mb-2">Contact us</h2>
+                    <div class="divider mx-auto my-4"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <hr />
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                          
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-xl-12 col-xxl-12">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <form class="" asp-action="create" method="post" enctype="multipart/form-data">
+                                    @Html.AntiForgeryToken()
+                                    <div>
+
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-lg-6 mb-4">
+                                                    <div class="form-group">
+                                                        <h5><label class="text-label">Full Name </label></h5>
+                                                        <input type="text" asp-for="FullName" class="form-control" />
+                                                        <span class="text-danger" asp-validation-for="FullName"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 mb-4">
+                                                    <div class="form-group">
+                                                        <h5><label class="text-label">Email</label></h5>
+                                                        <input type="text" asp-for="Email" class="form-control" />
+                                                        <span class="text-danger" asp-validation-for="Email"></span>
+                                                    </div>
+                                                    <div id="single-preview" class="mt-4"></div>
+                                                </div>
+                                              
+                                                
+                                            </div>
+
+
+
+                                        </section>
+
+                                       
+                                    </div>
+
+                                    <div>
+
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-lg-6 mb-4">
+                                                    <div class="form-group">
+                                                        <h5><label class="text-label">Phone </label></h5>
+                                                        <input type="text" asp-for="Phone" class="form-control" />
+                                                        <span class="text-danger" asp-validation-for="Phone"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 mb-4">
+                                                    <div class="form-group">
+                                                        <h5><label class="text-label">Topic</label></h5>
+                                                        <input type="text" asp-for="Topic" class="form-control" />
+                                                        <span class="text-danger" asp-validation-for="Topic"></span>
+                                                    </div>
+                                                    <div id="single-preview" class="mt-4"></div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </section>
+
+
+                                    </div>
+
+                                    <div>
+
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-lg-12 mb-8">
+                                                    <div class="form-group">
+                                                        <h5><label class="text-label">Message </label></h5>
+                                                        <input type="text" asp-for="Message" class="form-control" />
+                                                        <span class="text-danger" asp-validation-for="Message"></span>
+                                                    </div>
+                                                </div>
+                                               
+
+                                            </div>
+
+
+
+                                        </section>
+
+
+                                    </div>
+
+                                    <div class="mb-8 row">
+                                        <div class="col text-center">
+                                            
+                                            <button  type="submit" class="btn btn-primary mb-2">
+                                                <i class="fas fa-save"></i> Send
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "linear",
+                "hideEasing": "linear",
+                "showMethod": "show",
+                "hideMethod": "fadeOut"
+            };</script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+            @if (TempData["MessageSuccess"] != null)
+            {
+                <text>
+                        toastr.success('@TempData["MessageSuccess"]');
+                </text>
+            }
+                            });
+        </script>

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Project3.Models.NameRole>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<div class="content-body">
+    @*     @{
+    var errorMessage = TempData["ErrorMessage"] as string;
+    }
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+    <div class="alert alert-danger">
+    @errorMessage
+    </div>
+    } *@
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome !</h4>
+
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+
+                    <a asp-action="add_role" class="btn btn-rounded btn-info">
+                        <span class="btn-icon-left text-info">
+                            <i class="fa fa-plus color-info"></i>
+                        </span>Create new
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Role </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example" class="display" style="min-width: 845px; color:black;">
+                                <thead>
+                                    <tr>
+                                    
+                                        <th>Role</th>
+                                        <th></th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                       
+                                            <td>@item.NameRole1</td>
+                                            <td>
+                                                <a asp-controller="Role" asp-action="update_role" asp-route-id="@item.Id" class="btn "> <i class="fa fa-pencil" style="color: green; font-size:13px;"></i></a>
+                                                <a asp-controller="Role" asp-action="delete" asp-route-id="@item.Id" class="btn "><i class="fa fa-trash " style="color: red; font-size:13px;"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="~/BE/js/toastr-admin.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function () {
+    @if (TempData["roleerror"] != null)
+    {
+        <text>
+                toastr.error('@TempData["roleerror"]');
+        </text>
+    }
+       });
+</script>

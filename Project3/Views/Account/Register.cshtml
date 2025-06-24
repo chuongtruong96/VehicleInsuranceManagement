@@ -1,0 +1,104 @@
+﻿﻿
+@model Project3.ModelsView.Identity.RegisterUserViewModel;
+@{
+
+    Layout = "~/Views/LayoutUser/LayoutSecure.cshtml";
+}
+
+
+
+    <style>
+        .btn-login {
+            font-size: 0.9rem;
+            letter-spacing: 0.05rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .btn-google {
+            color: white !important;
+            background-color: #ea4335;
+        }
+
+   
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card border-0 shadow rounded-3 my-5">
+                    <div class="card-body p-4 p-sm-5">
+                        <h2 class="card-title text-center mb-5">Register</h2>
+                        <form asp-action="Register" method="post">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" asp-for="Fullname" placeholder="Fullname">
+                                <span asp-validation-for="Fullname" class="text-danger"></span>
+                                <label for="floatingName">Fullname</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" asp-for="Email" placeholder="name@example.com">
+                                <p class="text-drak">
+                                <i class="fa-solid fa-triangle-exclamation" style="color: #e6b919;"></i>
+                                Please enter a valid email address. An email will be sent for verification !!
+                                </p>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                                <label for="floatingInput">Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" asp-for="Phone" placeholder="Phone">
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                                <label for="floatingPhone">Phone</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                            <input type="password" id="password" class="form-control" asp-for="Password" placeholder="Password">
+                            <input type="checkbox" id="showPassword" /> Show password
+                     
+
+                            @* <i class="fa fa-eye-slash toggle-password" data-target="#password" style="cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></i> *@
+                                <p>Please ensure your password meets the following criteria:</p>
+                                <ul>
+                                    <li>At least 6 characters long</li>
+                                    <li>Contains at least one lowercase letter</li>
+                                </ul>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                                <div class="text-danger">
+                                    @if (ViewData.ModelState.ContainsKey("PasswordTooShort"))
+                                    {
+                                        <span>@ViewData.ModelState["PasswordTooShort"].Errors.First().ErrorMessage</span>
+                                    }
+
+                                    @if (ViewData.ModelState.ContainsKey("PasswordRequiresLower"))
+                                    {
+                                        <span>@ViewData.ModelState["PasswordRequiresLower"].Errors.First().ErrorMessage</span>
+                                    }
+
+
+                                </div>
+
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                            <input type="password" id="confirm" class="form-control" asp-for="ConfirmPassword" placeholder="ConfirmPassword">
+                            <input type="checkbox" id="showConfirm" /> Show password
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+                                <label for="floatingConfirmPassword">ConfirmPassword</label>
+                            </div>
+
+                            <div class=" my-3">
+
+                                <div class="text-wrap">
+                                    <span>Already have an account?</span> <a asp-action="Login" asp-controller="Account" class="text-dark">Login</a>
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Register</button>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,42 @@
+﻿@model Project3.ModelsView.Identity.ProfileViewModel;
+
+@{
+    ViewData["Title"] = "UpdateProfile";
+    Layout = "~/Views/LayoutUser/LayoutUser.cshtml";
+}
+
+<section class="section doctors">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-sm-6 col-md-6 mb-4 shuffle-item sidebar-widget schedule-widget m-auto">
+                <form asp-action="UpdateProfile" method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="form-group w-100">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <strong><span class="text-danger pr-2">&#8727;</span>Full Name:</strong>
+                            </div>
+                            <div class="col-md-6">
+                                <input asp-for="Fullname" class="form-control" />
+                                <span asp-validation-for="Fullname" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-2">
+                            <div class="col-md-6">
+                                <strong>Phone:</strong>
+                            </div>
+                            <div class="col-md-6">
+                                <input asp-for="Phone" type="number" class="form-control" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center w-100 mt-4">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <a asp-action="Index" asp-controller="Profile" class="btn btn-secondary mx-2">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

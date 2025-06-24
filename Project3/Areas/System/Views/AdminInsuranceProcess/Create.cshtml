@@ -1,0 +1,68 @@
+﻿@model Project3.ModelsView.InsuranceProcessViewModel
+@{
+    ViewData["Title"] = "Insurance Process";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-action="Create" method="post">
+                            <div class="form-group">
+                                <label for="CustomerName">Customer Name</label>
+                                <input type="text" class="form-control" asp-for="CustomerName" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="CustomerPhoneNumber">Customer Phone Number</label>
+                                <input type="text" class="form-control" asp-for="CustomerPhoneNumber" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleName">Vehicle Name</label>
+                                <input type="text" class="form-control" asp-for="VehicleName" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleModel">Vehicle Model</label>
+                                <input type="text" class="form-control" asp-for="VehicleModel" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleRate">Vehicle Rate</label>
+                                <input type="text" class="form-control" asp-for="VehicleRate" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyNumber">Policy Number</label>
+                                <input type="text" class="form-control" asp-for="PolicyNumber" readonly value="@Model.PolicyNumber" />
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyDate">Policy Date</label>
+                                <input type="text" class="form-control" asp-for="PolicyDate" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="PolicyDuration">Policy Duration (Months)</label>
+                                <input type="number" class="form-control" asp-for="PolicyDuration" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleBodyNumber">Vehicle Body Number</label>
+                                <input type="text" class="form-control" asp-for="VehicleBodyNumber" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="VehicleEngineNumber">Vehicle Engine Number</label>
+                                <input type="text" class="form-control" asp-for="VehicleEngineNumber" readonly />
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                            <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

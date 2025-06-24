@@ -1,0 +1,102 @@
+﻿@model Project3.ModelsView.Admin.CreateRoleViewModel;
+@{
+    ViewData["Title"] = "add_role";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Role</h4>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-12 col-xxl-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <form class="" asp-action="add_role" method="post">
+                            @Html.AntiForgeryToken()
+                            <div>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="form-group">
+                                                <h5><label class="text-label">Name role</label><span class="text-danger pl-2">&#8727;</span></h5>
+                                                <input type="text" asp-for="NameRole1" class="form-control" />
+                                                <span class="text-danger" asp-validation-for="NameRole1"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            <div class="basic-form">
+                                                <div class="form-group">
+                                                    <span class="text-danger pl-2">&#8727; Please select at least 1 permission</span>
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="SelectedPermissions" value="AdminAccount">
+                                                        <label class="form-check-label h6">Admin Account</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="SelectedPermissions" value="AdminEstimates">
+                                                        <label class="form-check-label h6">Admin Estimates</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="SelectedPermissions" value="AdminInsuranceProcess">
+                                                        <label class="form-check-label h6">Admin Insurance Process</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="SelectedPermissions" value="AdminInsuranceProducts">
+                                                        <label class="form-check-label h6">Admin Insurance Products</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="SelectedPermissions" value="AdminVehicleInformations">
+                                                        <label class="form-check-label h6">Admin Vehicle Informations</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="SelectedPermissions" value="AdminCompanyBillingPolicies">
+                                                        <label class="form-check-label h6">Admin Company Billing Policies</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="SelectedPermissions" value="AdminContactUs">
+                                                        <label class="form-check-label h6">Admin Contact Us</label>
+                                                    </div>
+
+                                                    <span class="text-danger">@Html.ValidationMessage("SelectedPermissions")</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <div class="text-left mt-4 mb-5">
+                                    <button class="btn btn-primary btn-sl-sm mr-3" type="submit">
+                                        <span class="mr-2"><i class="fa fa-paper-plane"></i></span> Save
+                                    </button>
+                                    <a class="btn btn-dark btn-sl-sm" asp-action="index">
+                                        <span class="mr-2">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </span> Back
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

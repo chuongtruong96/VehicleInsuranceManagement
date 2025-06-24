@@ -1,0 +1,51 @@
+﻿@model Project3.Models.VehicleWarranty
+
+@{
+    ViewData["Title"] = "Vehicle Warranty Details";
+    Layout = "~/Areas/System/Views/Layout/LayoutAdmin.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <a asp-action="Index" class="btn btn-rounded btn-secondary">
+                        Back to List
+                    </a>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2>@ViewData["Title"]</h2>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.WarrantyType)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.WarrantyType)</dd>
+
+                            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.WarrantyDuration)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.WarrantyDuration)</dd>
+
+                            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.WarrantyDetails)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.WarrantyDetails)</dd>
+                        </dl>
+                        <div class="text-right">
+                            <a asp-action="Edit" asp-route-id="@Model.WarrantyId" class="btn btn-warning">Edit</a>
+                            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
